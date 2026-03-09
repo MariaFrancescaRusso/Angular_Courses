@@ -1,0 +1,35 @@
+h3 {
+	margin: 0 0 0.5rem 0;
+}
+
+.wish-list {
+	background-color: #ffeef0;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem; /*--> space between item*/
+}
+
+.wishlist-logo {
+	font-size: 1.2rem;
+	color: red;
+}
+
+.wishlist-item {
+	font-weight: bold;
+	margin-right: 0.5rem;
+}
+
+button {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}

@@ -1,0 +1,35 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "title": "Introduction to Angular",
+            "description": "Learn the basics of Angular in this course.",
+            "price": 49,
+            "date": "2025-03-01",
+            "img": "favicon.ico",
+            "soldOut": false,
+            "onSale": false
+        },
+        {
+            "id": 2,
+            "title": "Advanced Angular",
+            "description": "Take your Angular skills to the next level.",
+            "price": 99,
+            "date": "2025-04-10",
+            "img": "favicon.ico",
+            "soldOut": true,
+            "onSale": true
+        },
+        {
+            "id": 3,
+            "title": "RxJS Fundamentals",
+            "description": "Asynchronous data streams.",
+            "price": 45,
+            "onSale": true,
+            "date": "2025-05-05",
+            "img": "RxJS_Logo.png",
+            "soldOut": false
+        }
+    ],
+    "students": []
+}

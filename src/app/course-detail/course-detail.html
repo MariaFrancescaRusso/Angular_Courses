@@ -1,0 +1,21 @@
+<div class="course-detail">
+	<h2>Course Detail</h2>
+
+	<button (click)="onCourseDetailByID(1)">Load Course with 1</button>
+	<!-- @for (course of courses; track course.id) {
+		<button>Load Course with</button>
+		<button (click)="onCourseDetailByID(course.id)">Load Course with ID {{ course.id }}</button>
+	} -->
+
+	<hr/>
+	
+	@if (course) {
+		<div>
+			<h3>{{ course.title }}</h3>
+			<p>{{ course.description }}</p>
+			<p>{{ course.price | currency:'EUR' }}</p>
+			<p>{{ course.date | date:'longDate' }}</p>
+			<img [src]="course.image" [alt]="course.title" width="100"/>
+		</div>
+	}
+</div>

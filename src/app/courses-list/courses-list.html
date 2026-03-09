@@ -1,0 +1,15 @@
+<h2>{{ title }}</h2>
+
+@if (wishlist.length > 0) {
+	<div class="wish-list">
+		<span class="wishlist-logo">❤</span>
+		My WishList: 
+		@for (course of wishlist; track course.id) {
+			<span class="wishlist-item">{{ course.title }}</span>
+		}
+	</div>
+}
+
+@for (course of courses; track course.id) {
+	<app-course-card [course]="course" (courseBooked)="onCourseBooked($event)" (wishList)="onWishList($event)"></app-course-card>
+}
