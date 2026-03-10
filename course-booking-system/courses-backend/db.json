@@ -6,7 +6,7 @@
             "description": "Learn the basics of Angular in this course.",
             "price": 49,
             "date": "2025-03-01",
-            "img": "favicon.ico",
+            "image": "favicon.ico",
             "soldOut": false,
             "onSale": false
         },
@@ -16,7 +16,7 @@
             "description": "Take your Angular skills to the next level.",
             "price": 99,
             "date": "2025-04-10",
-            "img": "favicon.ico",
+            "image": "favicon.ico",
             "soldOut": true,
             "onSale": true
         },
@@ -27,7 +27,7 @@
             "price": 45,
             "onSale": true,
             "date": "2025-05-05",
-            "img": "RxJS_Logo.png",
+            "image": "RxJS_Logo.png",
             "soldOut": false
         }
     ],
