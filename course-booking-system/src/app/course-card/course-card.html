@@ -15,6 +15,7 @@
 			<div class="on-sale">On Sale!</div>
 		}
 
+		<button (click)="onSeeDetailByID(course.id)">See Details</button>
 		<button (click)="onWishList()">Add to WishList</button>
 		<button [disabled]="course.soldOut" (click)="onCourseBooked()">Book Course</button>
 	</div>
