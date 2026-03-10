@@ -27,10 +27,18 @@ function saveData(data) {
   =============
 */
 
-// Get all courses
+// Get all courses or the courses filtred by optional description
 app.get('/courses', (req, res) => {
     const data = loadData();
-    res.json(data.courses);
+    let courses = data.courses;
+
+    const descriptionFilter = req.query.description;
+    if (descriptionFilter) {
+         // Filter if the course's description includes the substring
+        courses = courses.filter(c => c.description.toLowerCase().includes(descriptionFilter.toLowerCase()));
+    }
+
+    res.json(courses);
 });
 
 // Get a course by ID
