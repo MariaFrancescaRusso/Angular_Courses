@@ -22,7 +22,7 @@ export class CourseDetail implements OnInit {
         const id = +idStr;
         this.onCourseDetailByID(id);
       }
-    })
+    });
   }
 
   onCourseDetailByID(id: number): void {

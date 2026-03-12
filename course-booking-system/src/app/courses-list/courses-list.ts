@@ -19,9 +19,9 @@ export class CoursesList implements OnInit {
   
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
-      const descr = params.get("description");
+      const descr = params.get('description');
       this.loadCourses(descr);
-    })
+    });
     // console.log("CoursesList initialized!");
   }
 
@@ -31,7 +31,7 @@ export class CoursesList implements OnInit {
         this.courses = data;
       }, 
       error: (err) => {
-        console.error("Error fetching courses: ", err);
+        console.error('Error fetching courses: ', err);
       }
     });
   }
