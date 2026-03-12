@@ -1,6 +1,7 @@
 <h2>Sign Up for a Course!</h2>
 
 <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+	<!-- Name -->
 	<div class="form-group">
 		<label for="name">Name:</label>
 		<input type="text" formControlName="name" id="name"/>
@@ -12,6 +13,7 @@
 			</div>
 		}
 	</div>
+	<!-- E-mail -->
 	<div class="form-group">
 		<label for="email">E-mail:</label>
 		<input type="email" formControlName="email" id="email"/>
@@ -26,6 +28,7 @@
 			</div>
 		}
 	</div>
+	<!-- Enrolled Course ID -->
 	<div class="form-group">
 		<label for="enrolledCourseId">Enroll in:</label>
 		<select formControlName="enrolledCourseId" id="enrolledCourseId">
@@ -42,6 +45,7 @@
         </div>
 		}
 	</div>
+	<!-- Submit Button -->
 	<button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
 	@if (submissionSuccess) {
 		<div class="success">
