@@ -3,7 +3,7 @@ export interface Course {
 	title: string;
 	description: string;
 	price: number;
-	date?: string;
+	date: string;
 	image?: string;
 	soldOut: boolean;
 	onSale: boolean;

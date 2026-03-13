@@ -1,0 +1,84 @@
+<h2>Add Here a New Course</h2>
+
+<form [formGroup]="addNewCourseForm" (ngSubmit)="onSubmit()">
+	<!-- Title -->
+	<div class="form-group">
+		<label for="title">Title:</label>
+		<input type="text" formControlName="title" id="title"/>
+		@if (title?.invalid && (title?.dirty || title?.touched)) {
+			<div class="error">
+				@if (title?.errors?.['required']) {
+					<small>Title is required!</small>
+				}
+			</div>
+		}
+	</div>
+	<!-- Description -->
+	<div class="form-group">
+		<label for="description">Description:</label>
+		<textarea formControlName="description" id="description" cols="30" rows="10"></textarea>
+		@if (description?.invalid && (description?.dirty || description?.touched)) {
+			<div class="error">
+				@if (description?.errors?.['required']) {
+					<small>Description is required!</small>
+				}
+			</div>
+		}
+	</div>
+	<!-- Price -->
+	<div class="form-group">
+		<label for="price">Price (€):</label>
+		<input type="number" formControlName="price" id="price"/>
+		@if (price?.invalid && (price?.dirty || price?.touched)) {
+			<div class="error">
+				@if (price?.errors?.['required']) {
+					<small>Price is required!</small>
+				}
+				@if (price?.errors?.['min']) {
+					<small>Price should be a positive number!</small>
+				}
+			</div>
+		}
+	</div>
+	<!-- Course Date -->
+	<div class="form-group">
+		<label for="date">Starting Course Date:</label>
+		<input type="date" formControlName="date" id="date"/>
+		@if (date?.invalid && (date?.dirty || date?.touched)) {
+			<div class="error">
+				@if (date?.errors?.['required']) {
+					<small>Date is required!</small>
+				}
+			</div>
+		}
+	</div>
+	<!-- Image (optional) -->
+	<div class="form-group">
+		<label for="image">Image URL:</label>
+		<input type="file" formControlName="image" id="image">
+		<!-- @if (image?.invalid && (image?.dirty || image?.touched)) {
+			<div class="error">
+				@if (price?.errors?.['required']) {
+					<small>Price is required!</small>
+				}
+			</div>
+		} -->
+	</div>
+	<!-- On Sale -->
+	<div class="form-group">
+		<label class="inline" for="onSale">On Sale:</label>
+		<input type="checkbox" formControlName="onSale" id="onSale"/>
+	</div>
+	<!-- Submit Button -->
+	<button type="submit" [disabled]="addNewCourseForm.invalid">Add Course</button>
+	@if (submissionSuccess) {
+		<div class="success">
+			<p>Course added correctly.</p>
+		</div>
+	}
+	@if (submissionError) {
+		<div class="error">
+			<p>{{ submissionError }}</p>
+		</div>
+	}
+</form>
