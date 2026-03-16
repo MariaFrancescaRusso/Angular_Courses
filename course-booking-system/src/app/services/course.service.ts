@@ -44,4 +44,10 @@ export class CourseService {
   addStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(`${this.baseUrl}/students`, student);
   }
+
+  // GET All Courses or Courses filtred by optional description
+  getStudents(): Observable<Student[]> {
+    let url = `${this.baseUrl}/students`;
+    return this.http.get<Student[]>(url);
+  }
 }
