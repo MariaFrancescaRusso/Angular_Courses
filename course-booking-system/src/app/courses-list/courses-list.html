@@ -10,6 +10,21 @@
 	</div>
 }
 
-@for (course of courses; track course.id) {
-	<app-course-card [course]="course" (courseBooked)="onCourseBooked($event)" (wishList)="onWishList($event)"></app-course-card>
+@if (loading) {
+	<p>Loading courses...</p>
+}
+@if (errorMessage) {
+	<div class="error">
+		<p>{{ errorMessage }}</p>
+	</div>
+}
+@if (!loading && !errorMessage) {
+	@if (courses.length > 0) {
+		@for (course of courses; track course.id) {
+			<app-course-card [course]="course" (courseBooked)="onCourseBooked($event)" (wishList)="onWishList($event)"></app-course-card>
+		}
+	}
+	@else {
+		<p>No courses found.</p>
+	}
 }

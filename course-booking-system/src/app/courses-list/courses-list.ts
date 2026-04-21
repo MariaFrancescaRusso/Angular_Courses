@@ -14,6 +14,8 @@ export class CoursesList implements OnInit {
   title: string = "Available Courses";
   wishlist: Course[] = [];
   courses: Course[] = [];
+  errorMessage: string = "";
+  loading: boolean = false;
 
   constructor(private courseService: CourseService, private route: ActivatedRoute, private router: Router) {}
   
@@ -26,12 +28,16 @@ export class CoursesList implements OnInit {
   }
 
   loadCourses(description: string | null): void {
+    this.loading = true;
     this.courseService.getCourses(description).subscribe({
       next: (data: Course[]) => {
         this.courses = data;
+        this.loading = false;
       }, 
       error: (err) => {
         console.error('Error fetching courses: ', err);
+        this.errorMessage = "Failed to load courses. Please try again later.";
+        this.loading = false;
       }
     });
   }
